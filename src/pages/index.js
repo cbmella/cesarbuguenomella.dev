@@ -4,6 +4,7 @@ import Bio from '../components/Bio';
 import Projects from '../components/Projects';
 import Skills from '../components/Skills';
 import Contact from '../components/Contact';
+import GithubRepos from '../components/GithubRepos';
 
 // Definición de clases de estilo
 const mainStyle = "bg-gray-100 min-h-screen p-12";
@@ -14,6 +15,7 @@ const IndexPage = () => (
     <Bio />
     <Projects />
     <Skills />
+    <GithubRepos />
     <Contact />
   </main>
 );
