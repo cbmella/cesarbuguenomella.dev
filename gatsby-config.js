@@ -1,6 +1,8 @@
 /**
  * @type {import('gatsby').GatsbyConfig}
  */
+require('dotenv').config()
+
 module.exports = {
   siteMetadata: {
     title: `cbuguenomella.dev`,
@@ -27,9 +29,9 @@ module.exports = {
         fieldName: 'github',
         url: 'https://api.github.com/graphql',
         headers: {
-          Authorization: `Bearer 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`,
+          Authorization: `Bearer ${process.env.GITHUB_TOKEN}`,
         },
       },
-    },
+    },    
   ],
 };
