@@ -2,11 +2,11 @@ import React from 'react';
 import { graphql, useStaticQuery } from 'gatsby';
 
 const GithubRepos = () => {
-  const { github: { viewer: { original: { nodes } } } } = useStaticQuery(graphql`
+  const { github: { viewer: { repositories: { nodes } } } } = useStaticQuery(graphql`
     query {
       github {
         viewer {
-          original: repositories(
+          repositories(
             first: 100
             ownerAffiliations: OWNER
             privacy: PUBLIC
