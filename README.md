@@ -7,16 +7,13 @@ This is the repository for my personal website, cbuguenomella.dev. It's built wi
 - Showcases my GitHub repositories
 - Displays my personal bio and contact information
 - Responsive design for all device sizes
+- Integration of my Medium blog posts
+  - Fetches the latest blog posts from my Medium account
+  - Displays a preview of each post on the homepage
+  - Provides a link to the full post on Medium
 
 ## Upcoming Features
 
-### Medium Blog Posts Integration
-
-An upcoming feature is the integration of my Medium blog posts into the site. This will include:
-
-- Fetching the latest blog posts from my Medium account
-- Displaying a preview of each post on the homepage
-- Providing a link to the full post on Medium
 
 ## Development
 
