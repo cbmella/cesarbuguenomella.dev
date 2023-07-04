@@ -34,21 +34,12 @@ const MediumPosts = () => {
   const postTitleClass = "text-2xl font-bold";
   const postContainerClass = "mt-6";
 
-  const handleCopyUrl = (url) => {
-    navigator.clipboard.writeText(url)
-      .then(() => {
-        console.log("URL copied to clipboard");
-      })
-      .catch((error) => {
-        console.error("Failed to copy URL to clipboard:", error);
-      });
-  };
-
   return (
     <section id="medium-posts" className={containerClass}>
       <h2 className={titleClass}>Publicaciones de Medium</h2>
       {edges.map(({ node: post }, index) => {
         const mediumLink = `https://medium.com/${post.author.username}/${post.uniqueSlug}`;
+        const imageUrl = `https://cdn-images-1.medium.com/max/350/${post.virtuals.previewImage.imageId}`;
 
         return (
           <div key={index} className={postContainerClass}>
@@ -58,9 +49,7 @@ const MediumPosts = () => {
               </a>
             </h3>
             <p>{post.virtuals.subtitle}</p>
-            <button onClick={() => handleCopyUrl(mediumLink)}>
-              Copiar URL
-            </button>
+            <img src={imageUrl} alt={post.title} />
           </div>
         );
       })}
@@ -69,4 +58,5 @@ const MediumPosts = () => {
 };
 
 export default MediumPosts;
+
 

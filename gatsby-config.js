@@ -1,12 +1,9 @@
-/**
- * @type {import('gatsby').GatsbyConfig}
- */
 require('dotenv').config()
 
 module.exports = {
   siteMetadata: {
-    title: `cbuguenomella.dev`,
-    siteUrl: `https://www.yourdomain.tld`,
+    title: process.env.GATSBY_PAGE_TITLE || 'yourwebtitle.dev',
+    siteUrl: process.env.GATSBY_SITE_URL || `https://www.yourdomain.tld`,
   },
   plugins: [
     "gatsby-plugin-postcss", 
@@ -21,7 +18,6 @@ module.exports = {
       },
       __key: "images",
     },
-    // Aquí se agrega el plugin gatsby-source-graphql
     {
       resolve: 'gatsby-source-graphql',
       options: {
@@ -32,6 +28,12 @@ module.exports = {
           Authorization: `Bearer ${process.env.GITHUB_TOKEN}`,
         },
       },
-    },    
+    },
+    {
+      resolve: `gatsby-source-medium`,
+      options: {
+        username: process.env.MEDIUM_USERNAME || '', 
+      },
+    },  
   ],
 };

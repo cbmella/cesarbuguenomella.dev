@@ -24,4 +24,4 @@ const IndexPage = () => (
 
 export default IndexPage;
 
-export const Head = () => <title>Portafolio - César Andrés Bugueño Mella</title>;
+export const Head = () => <title>{process.env.GATSBY_PAGE_TITLE || 'yourwebtitle.dev'}</title>;
