@@ -6,9 +6,9 @@ module.exports = {
     siteUrl: process.env.GATSBY_SITE_URL || `https://www.yourdomain.tld`,
   },
   plugins: [
-    "gatsby-plugin-postcss", 
-    "gatsby-plugin-image", 
-    "gatsby-plugin-sharp", 
+    "gatsby-plugin-postcss",
+    "gatsby-plugin-image",
+    "gatsby-plugin-sharp",
     "gatsby-transformer-sharp",
     {
       resolve: 'gatsby-source-filesystem',
@@ -32,8 +32,17 @@ module.exports = {
     {
       resolve: `gatsby-source-medium`,
       options: {
-        username: process.env.MEDIUM_USERNAME || '', 
+        username: process.env.MEDIUM_USERNAME || '',
       },
-    },  
+    },
+    {
+      resolve: 'gatsby-plugin-alias-imports',
+      options: {
+        alias: {
+          "@data": "src/data",
+        },
+        extensions: []
+      }
+    },
   ],
 };

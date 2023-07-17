@@ -1,33 +1,30 @@
 import React from 'react';
+import { skills } from '@data/skillsData';
+import SkillItem from './SkillItem';
 
-const skillsStyle = "container mx-auto my-12";
-const titleStyle = "text-4xl font-bold";
-const listItemStyle = "mt-4";
+const classes = {
+  container: "container mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 mt-6",
+  centeredText: "text-center",
+  title: "text-3xl tracking-tight leading-9 font-extrabold text-gray-900 sm:text-4xl sm:leading-10",
+  skillsGrid: "mt-12 grid gap-5 max-w-lg mx-auto lg:grid-cols-3 lg:max-w-none",
+};
 
 const Skills = () => {
-  const skills = [
-    "Lenguajes de programación: PHP, SQL, JavaScript, HTML, CSS",
-    "Marcos de trabajo y librerías: Laravel, Vue.js, Inertia.js, jQuery, Bootstrap, Tailwind CSS",
-    "Bases de datos: MySQL",
-    "Pila tecnológica: VILT Stack",
-    "Infraestructura en la nube: AWS (EC2, RDS, S3, SES)",
-    "Control de versiones: Git",
-    "Contenerización: Docker",
-    "Sistemas operativos: Linux Ubuntu, Windows",
-    "Pruebas y metodologías: PHPUnit, Scrum, Código Limpio, Tests",
-    "CMS: WordPress Divi",
-    "Aprendiendo: MERN Stack, TypeScript"
-  ];
+  const sortedSkills = [...skills].sort((a, b) => b.items.length - a.items.length);
 
   return (
-    <section id="skills" className={skillsStyle}>
-      <h2 className={titleStyle}>Habilidades</h2>
-      <ul>
-        {skills.map((skill, index) => (
-          <li key={index} className={listItemStyle}>{skill}</li>
-        ))}
-      </ul>
-    </section>
+    <div id='skills' className="bg-white py-4">
+      <div className={classes.container}>
+        <div className={classes.centeredText}>
+          <h2 className={classes.title}>Skills</h2>
+        </div>
+        <div className={classes.skillsGrid}>
+          {sortedSkills.map((skill, index) => (
+            <SkillItem key={index} skill={skill} />
+          ))}
+        </div>
+      </div>
+    </div>
   );
 };
 

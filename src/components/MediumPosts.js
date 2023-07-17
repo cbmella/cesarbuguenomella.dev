@@ -1,10 +1,16 @@
-import React from "react";
-import { graphql, useStaticQuery } from "gatsby";
+import React from 'react';
+import { useStaticQuery, graphql } from 'gatsby';
+import MediumPost from './MediumPost';
+
+const classes = {
+  container: "container mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 mt-6",
+  centeredText: "text-center",
+  title: "text-3xl tracking-tight leading-9 font-extrabold text-gray-900 sm:text-4xl sm:leading-10",
+  postsGrid: "mt-12 grid gap-5 max-w-lg mx-auto lg:grid-cols-3 lg:max-w-none",
+};
 
 const MediumPosts = () => {
-  const {
-    allMediumPost: { edges },
-  } = useStaticQuery(graphql`
+  const data = useStaticQuery(graphql`
     query {
       allMediumPost(sort: { createdAt: DESC }) {
         edges {
@@ -27,36 +33,22 @@ const MediumPosts = () => {
       }
     }
   `);
-
-  // CSS classes
-  const containerClass = "container mx-auto my-12";
-  const titleClass = "text-4xl font-bold";
-  const postTitleClass = "text-2xl font-bold";
-  const postContainerClass = "mt-6";
+  const { allMediumPost: { edges } } = data;
 
   return (
-    <section id="medium-posts" className={containerClass}>
-      <h2 className={titleClass}>Publicaciones de Medium</h2>
-      {edges.map(({ node: post }, index) => {
-        const mediumLink = `https://medium.com/${post.author.username}/${post.uniqueSlug}`;
-        const imageUrl = `https://cdn-images-1.medium.com/max/350/${post.virtuals.previewImage.imageId}`;
-
-        return (
-          <div key={index} className={postContainerClass}>
-            <h3 className={postTitleClass}>
-              <a href={mediumLink} target="_blank" rel="noopener noreferrer">
-                {post.title}
-              </a>
-            </h3>
-            <p>{post.virtuals.subtitle}</p>
-            <img src={imageUrl} alt={post.title} />
-          </div>
-        );
-      })}
-    </section>
+    <div id='medium-posts' className="bg-white py-4">
+      <div className={classes.container}>
+        <div className={classes.centeredText}>
+          <h2 className={classes.title}>Posts</h2>
+        </div>
+        <div className={classes.postsGrid}>
+          {edges.map(({ node: post }, index) => (
+            <MediumPost key={index} post={post} />
+          ))}
+        </div>
+      </div>
+    </div>
   );
 };
 
 export default MediumPosts;
-
-

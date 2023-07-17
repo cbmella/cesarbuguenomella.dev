@@ -1,24 +1,23 @@
 import React from 'react';
 import Header from '../components/Header';
 import Bio from '../components/Bio';
-import Projects from '../components/Projects';
+import Experience from '../components/Experience';
 import Skills from '../components/Skills';
-import Contact from '../components/Contact';
+import Footer from '../components/Footer';
 import GithubRepos from '../components/GithubRepos';
 import MediumPosts from '../components/MediumPosts';
 
-// Definición de clases de estilo
-const mainStyle = "bg-gray-100 min-h-screen p-12";
+const mainStyle = "bg-gray-100 min-h-screen";
 
 const IndexPage = () => (
   <main className={mainStyle}>
     <Header />
     <Bio />
-    <Projects />
+    <Experience />
     <Skills />
     <GithubRepos />
     <MediumPosts />
-    <Contact />
+    <Footer />
   </main>
 );
 
