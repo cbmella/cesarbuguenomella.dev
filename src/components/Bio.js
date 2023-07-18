@@ -4,8 +4,8 @@ import ContactItem from './ContactItem';
 
 const classes = {
   container: "relative bg-center bg-cover h-screen flex items-center justify-center bg-black bg-opacity-50",
-  innerContainer: "mx-auto max-w-2xl py-32 sm:py-48 lg:py-12",
-  title: "text-4xl font-bold tracking-tight text-white sm:text-6xl drop-shadow-md text-center",
+  innerContainer: "mx-auto max-w-2xl py-32 sm:py-48 lg:py-12 sm:px-0 px-4",
+  title: "text-4xl font-bold tracking-tight text-white sm:text-6xl drop-shadow-md text-center mt-20",
   summary: "mt-6 text-lg leading-8 text-white drop-shadow-md text-justify",
   contactGrid: "mt-6 grid gap-4 grid-cols-1 md:grid-cols-2 lg:grid-cols-2",
 };
