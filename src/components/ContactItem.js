@@ -1,4 +1,3 @@
-// ContactItem.js
 import React from 'react';
 import CopyToClipboardButton from './CopyToClipboardButton';
 
@@ -11,10 +10,9 @@ const ContactItem = ({ info, handleCopy }) => {
   return (
     <div className={classes.contactContainer}>
       <div className={classes.contactIcon}>{info.icon}</div>
-      <CopyToClipboardButton value={info.value} handleCopy={() => handleCopy(info.type)} />
+      <CopyToClipboardButton value={info.value} info={info} handleCopy={handleCopy} />
     </div>
   );
 };
 
 export default ContactItem;
-
