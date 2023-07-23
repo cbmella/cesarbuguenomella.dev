@@ -1,19 +1,32 @@
-# cbuguenomella.dev
+<h1 align="center">cbuguenomella.dev</h1>
 
-This is the repository for my personal website, cbuguenomella.dev. It's built with GatsbyJS, and hosted on Netlify.
+<p align="center">
+  <strong>My personal website built with GatsbyJS and hosted on Netlify.</strong>
+</p>
+
+<p align="center">
+  <a href="https://cbuguenomella.dev">Live Demo</a> •
+  <a href="#features">Features</a> •
+  <a href="#upcoming-features">Upcoming Features</a> •
+  <a href="#development">Development</a> •
+  <a href="#contributing">Contributing</a> •
+  <a href="#license">License</a>
+</p>
+
+---
 
 ## Features
 
-- Showcases my GitHub repositories
-- Displays my personal bio and contact information
-- Responsive design for all device sizes
-- Integration of my Medium blog posts
-  - Fetches the latest blog posts from my Medium account
-  - Displays a preview of each post on the homepage
-  - Provides a link to the full post on Medium
+- **GitHub Repositories:** Showcases my GitHub repositories.
+- **Personal Bio & Contact Information:** Displays my personal bio and contact information.
+- **Responsive Design:** Ensures a great user experience on all device sizes.
+  - Images in the Bio component are responsive and will display different versions based on the device's screen size.
+- **Medium Blog Posts Integration:** Fetches the latest blog posts from my Medium account, displays a preview of each post on the homepage, and provides a link to the full post on Medium.
 
 ## Upcoming Features
 
+- Further enhancements to the responsive design.
+- Additional features as per user feedback and requirements.
 
 ## Development
 
@@ -21,12 +34,14 @@ To start the development server:
 
 npm install
 npm start
-To build the project for production:
 
-Copy code
 npm run build
-Contributing
-Contributions are welcome! Please open an issue or submit a pull request if you would like to help out.
 
-License
-This project is licensed under the MIT License. See the LICENSE file for more details.
+## Contributing
+
+Contributions are welcome! Please refer to [CONTRIBUTING.md](CONTRIBUTING.md) for details.
+
+## License
+
+This project is licensed under the terms of the [MIT License](LICENSE).
+
