@@ -1,11 +1,11 @@
-<h1 align="center">cbuguenomella.dev</h1>
+<h1 align="center">cesarbuguenomella.dev</h1>
 
 <p align="center">
   <strong>My personal website built with GatsbyJS and hosted on Netlify.</strong>
 </p>
 
 <p align="center">
-  <a href="https://cbuguenomella.dev">Live Demo</a> •
+  <a href="https://cesarbuguenomella.dev">Live Demo</a> •
   <a href="#features">Features</a> •
   <a href="#upcoming-features">Upcoming Features</a> •
   <a href="#development">Development</a> •
