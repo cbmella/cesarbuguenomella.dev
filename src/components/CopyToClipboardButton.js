@@ -1,4 +1,5 @@
-import React, { useState, useEffect, useCallback } from 'react';
+// CopyToClipboardButton.js
+import React, { useState, useCallback } from 'react';
 import { FaCopy } from 'react-icons/fa';
 import { CopyToClipboard } from 'react-copy-to-clipboard';
 
@@ -8,13 +9,13 @@ const classes = {
   copiedText: "ml-2 text-sm text-gray-600 animate-bounce",
 };
 
-const CopyToClipboardButton = ({ value, info, handleCopy }) => {
+const CopyToClipboardButton = ({ value, handleCopy }) => {
   const [showCopiedText, setShowCopiedText] = useState(false);
 
   const handleCopyClick = useCallback(() => {
-    handleCopy(info.type);
+    handleCopy();
     setShowCopiedText(true);
-  }, [handleCopy, info.type]);
+  }, [handleCopy]);
 
   useEffect(() => {
     let timeoutId;
@@ -40,3 +41,4 @@ const CopyToClipboardButton = ({ value, info, handleCopy }) => {
 };
 
 export default CopyToClipboardButton;
+

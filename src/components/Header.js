@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { menuItems, socialLinks } from '@data/menuData';
+import { menuItems, socialLinks, logo } from '@data/menuData';
 
 const classes = {
   menuItem: "text-sm font-semibold leading-6 text-white drop-shadow-md transition-colors duration-200 hover:text-gray-300 focus:outline-none focus:ring-2 focus:ring-gray-300 active:text-gray-500",
@@ -31,11 +31,10 @@ const Header = () => {
   const [isOpen, setIsOpen] = useState(false);
   const handleMenuToggle = () => setIsOpen(!isOpen);
   const handleLinkClick = () => setIsOpen(false);
-
   return (
     <header className={classes.header}>
       <nav className={classes.nav} aria-label="Global">
-        <img src="https://scontent.fscl9-2.fna.fbcdn.net/v/t39.30808-6/352995832_200600872937110_6107236175082838308_n.jpg?_nc_cat=105&cb=99be929b-59f725be&ccb=1-7&_nc_sid=09cbfe&_nc_ohc=dkFDtLdlb6kAX9zts2w&_nc_ht=scontent.fscl9-2.fna&oh=00_AfB99c9kt9nsxJm7r1x9NZMb7TCM9IbpRtn2-02SrfVn0A&oe=64BBB4DC" alt="Logo" className="w-10 h-10 mr-auto" />
+        <img src={logo} alt='logo' className="w-10 h-10 mr-auto" />
         <div className={`hidden lg:flex lg:gap-x-12 ${isOpen ? '' : 'hidden'} lg:block`}>
           {menuItems.map((item) => (
             <MenuItem key={item.href} item={item} onClick={handleLinkClick} className={classes.menuItem} />

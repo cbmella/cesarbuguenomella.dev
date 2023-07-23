@@ -1,48 +1,39 @@
 import React, { useState } from 'react';
-import { contactInfo, summary, backgroundImageUrl, title } from '@data/bioData';
-import ContactItem from './ContactItem';
+import { FaCopy } from 'react-icons/fa';
+import { CopyToClipboard } from 'react-copy-to-clipboard';
 
 const classes = {
-  container: "relative bg-center bg-cover h-screen flex items-center justify-center bg-black bg-opacity-50",
-  innerContainer: "mx-auto max-w-2xl py-32 sm:py-48 lg:py-12 sm:px-0 px-4",
-  title: "text-4xl font-bold tracking-tight text-white sm:text-6xl drop-shadow-md text-center mt-20",
-  summary: "mt-6 text-lg leading-8 text-white drop-shadow-md text-justify",
-  contactGrid: "mt-6 grid gap-4 grid-cols-1 md:grid-cols-2 lg:grid-cols-2",
+  contactContainer: "flex items-center justify-between gap-x-2 p-4 bg-white rounded-lg shadow-lg transition-all duration-500 ease-in-out transform hover:scale-105",
+  contactIcon: "text-2xl text-royal-blue",
 };
 
-const Bio = () => {
-  const [copied, setCopied] = useState({ phone: false, email: false });
+const ContactItem = ({ info }) => {
+  const [showCopiedText, setShowCopiedText] = useState(false);
 
-  const handleCopy = (type) => {
-    setCopied({ ...copied, [type]: true });
+  const handleCopy = () => {
+    setShowCopiedText(true);
+
     setTimeout(() => {
-      setCopied({ ...copied, [type]: false });
+      setShowCopiedText(false);
     }, 2000);
   };
 
   return (
-    <div
-      className={classes.container}
-      style={{
-        backgroundImage: `url('${backgroundImageUrl}')`,
-      }}
-    >
-      <div className={classes.innerContainer}>
-        <div className="text-center">
-          <h1 className={classes.title}>{title}</h1>
-          <p className={classes.summary}>{summary}</p>
-          <div className={classes.contactGrid}>
-            {contactInfo.map((info, index) => (
-              <ContactItem key={index} info={info} copied={copied} handleCopy={handleCopy} />
-            ))}
-          </div>
+    <CopyToClipboard text={info.value} onCopy={handleCopy}>
+      <div className={classes.contactContainer}>
+        <div className={classes.contactIcon}>{info.icon}</div>
+        <div className="flex justify-between items-center flex-grow">
+          <span className="text-sm text-gray-600 break-words text-center">
+            {showCopiedText ? 'Copiado' : info.value}
+          </span>
+          <FaCopy className={`ml-2 text-gray-600 ${showCopiedText ? 'animate-bounce' : ''}`} />
         </div>
       </div>
-    </div>
+    </CopyToClipboard>
   );
 };
 
-export default Bio;
+export default ContactItem;
 
 
 
