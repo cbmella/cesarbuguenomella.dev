@@ -1,5 +1,5 @@
 import React from 'react';
-import { FaCode, FaDatabase, FaCloud, FaDocker, FaLinux, FaWordpress, FaServer, FaFileCode, FaGitSquare, FaLaptopCode, FaReact } from 'react-icons/fa';
+import { FaCode, FaDatabase, FaCloud, FaDocker, FaLinux, FaWordpress, FaFileCode, FaGitSquare, FaLaptopCode, FaReact } from 'react-icons/fa';
 
 export const skills = [
     {
@@ -10,6 +10,7 @@ export const skills = [
             { name: "JavaScript" },
             { name: "HTML" },
             { name: "CSS" },
+            { name: "TypeScript" },
         ],
         icon: <FaCode />,
     },
@@ -22,6 +23,12 @@ export const skills = [
             { name: "jQuery" },
             { name: "Bootstrap" },
             { name: "Tailwind CSS" },
+            { name: "React" },
+            { name: "Next.js" },
+            { name: "Nuxt.js" },
+            { name: "Gatsby" },
+            { name: "Express" },
+            { name: "Nest.js" },
         ],
         icon: <FaLaptopCode />,
     },
@@ -29,20 +36,9 @@ export const skills = [
         category: "Bases de datos",
         items: [
             { name: "MySQL" },
+            { name: "MongoDB" },
         ],
         icon: <FaDatabase />,
-    },
-    {
-        category: "Stacks de desarrollo",
-        items: [
-            { name: "VILT" },
-            { name: "LAMP" },
-            { name: "LEMP" },
-            { name: "LVMP" },
-            { name: "MEVN" },
-            { name: "MERN" },
-        ],
-        icon: <FaServer />,
     },
     {
         category: "Infraestructura en la nube",
@@ -74,12 +70,31 @@ export const skills = [
         icon: <FaLinux />,
     },
     {
-        category: "Pruebas, Metodologías y Principios de diseño",
+        category: "Pruebas",
         items: [
             { name: "PHPUnit" },
+            { name: "Jest" },
+        ],
+        icon: <FaFileCode />,
+    },
+    {
+        category: "Metodologías",
+        items: [
             { name: "Scrum" },
+            { name: "Kanban" },
+            { name: "XP" },
+            { name: "Waterfall" },
+            { name: "DevOps" },
+        ],
+        icon: <FaFileCode />,
+    },
+    {
+        category: "Principios de Diseño",
+        items: [
             { name: "SOLID" },
             { name: "DRY" },
+            { name: "POO" },
+            { name: "Clean Code" },
         ],
         icon: <FaFileCode />,
     },
@@ -93,8 +108,8 @@ export const skills = [
     {
         category: "Aprendiendo",
         items: [
-            { name: "MERN Stack" },
-            { name: "TypeScript" },
+            { name: "Java" },
+            { name: "Angular" },
         ],
         icon: <FaReact />,
     },

@@ -1,5 +1,4 @@
-import React from 'react';
-import { useStaticQuery, graphql } from 'gatsby';
+import React, { useState, useEffect } from 'react';
 import MediumPost from './MediumPost';
 
 const classes = {
@@ -10,30 +9,26 @@ const classes = {
 };
 
 const MediumPosts = () => {
-  const data = useStaticQuery(graphql`
-    query {
-      allMediumPost(sort: { createdAt: DESC }) {
-        edges {
-          node {
-            id
-            uniqueSlug
-            title
-            createdAt(formatString: "MMM YYYY")
-            virtuals {
-              subtitle
-              previewImage {
-                imageId
-              }
-            }
-            author {
-              username
-            }
-          }
-        }
-      }
-    }
-  `);
-  const { allMediumPost: { edges } } = data;
+  const [posts, setPosts] = useState([]);
+
+  useEffect(() => {
+    fetch('/.netlify/functions/medium')
+      .then(response => response.text())
+      .then(data => {
+        const parser = new DOMParser();
+        const xmlDoc = parser.parseFromString(data, "text/xml");
+        const items = Array.from(xmlDoc.getElementsByTagName("item"));
+        const jsonPosts = items.map(item => {
+          return {
+            title: item.getElementsByTagName("title")[0].textContent,
+            link: item.getElementsByTagName("link")[0].textContent,
+            pubDate: item.getElementsByTagName("pubDate")[0].textContent,
+            // Agrega aquí cualquier otro campo que necesites
+          };
+        });
+        setPosts(jsonPosts);
+      });
+  }, []);
 
   return (
     <div id='medium-posts' className="bg-white py-4">
@@ -42,7 +37,7 @@ const MediumPosts = () => {
           <h2 className={classes.title}>Posts</h2>
         </div>
         <div className={classes.postsGrid}>
-          {edges.map(({ node: post }, index) => (
+          {posts.map((post, index) => (
             <MediumPost key={index} post={post} />
           ))}
         </div>
@@ -52,3 +47,4 @@ const MediumPosts = () => {
 };
 
 export default MediumPosts;
+

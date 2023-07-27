@@ -21,7 +21,7 @@ export const contactInfo = [
 export const title = "Hola, soy César Andrés Bugueño Mella";
 
 export const summary =
-  "Ingeniero en Informática con una trayectoria de más de 5 años en desarrollo web full-stack. Experto en diversas tecnologías, incluyendo PHP, SQL, JavaScript, HTML, CSS, y especializado en la pila VILT. Experiencia probada en la implementación de prácticas de Código Limpio y pruebas, así como en el uso de Docker para la contenerización. Como freelancer, he trabajado extensivamente en proyectos WordPress utilizando Divi. Actualmente, estoy ampliando mis habilidades aprendiendo MERN Stack y TypeScript.";
+  "Ingeniero en Informática con más de 6 años de experiencia en desarrollo web Full-Stack. Proficiente en PHP, SQL, JavaScript, HTML, CSS con un historial probado en la implementación de buenas prácticas. Actualmente, estoy ampliando mis habilidades aprendiendo Java y Angular. Mi objetivo es utilizar mis habilidades técnicas y mi pasión por el aprendizaje continuo para contribuir a un equipo de desarrollo dinámico.";
 
 export const images = {
   hero: {
