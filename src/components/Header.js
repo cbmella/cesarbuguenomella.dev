@@ -42,7 +42,7 @@ const Header = () => {
         </div>
         <div className="hidden lg:flex ml-auto space-x-4">
           {socialLinks.map(({ href, icon: Icon }) => (
-            <a target='_blank' href={href} className="text-white hover:text-gray-300" key={href}>
+            <a target='_blank' rel='noreferrer' href={href} className="text-white hover:text-gray-300" key={href}>
               <Icon size={20} />
             </a>
           ))}
@@ -50,7 +50,7 @@ const Header = () => {
         <div className="flex lg:hidden items-center justify-between w-full">
           <div className="flex-grow flex items-center justify-center">
             {socialLinks.map(({ href, icon: Icon }) => (
-              <a target='_blank' href={href} className="text-black hover:text-gray-500 mx-2" key={href}>
+              <a target='_blank' rel='noreferrer' href={href} className="text-black hover:text-gray-500 mx-2" key={href}>
                 <Icon size={24} />
               </a>
             ))}
@@ -81,7 +81,7 @@ const Header = () => {
                   </div>
                   <div className="mt-6 flex justify-around">
                     {socialLinks.map(({ href, icon: Icon }) => (
-                      <a target='_blank' href={href} className="text-black hover:text-gray-500" key={href}>
+                      <a target='_blank' rel='noreferrer' href={href} className="text-black hover:text-gray-500" key={href}>
                         <Icon size={24} />
                       </a>
                     ))}

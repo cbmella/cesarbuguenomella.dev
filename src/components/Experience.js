@@ -3,8 +3,8 @@ import { FaCalendar } from 'react-icons/fa';
 import { experiences } from '@data/experienceData';
 
 const classes = {
-  container: "container mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 mt-6",
-  title: "text-3xl font-semibold text-center mb-6",
+  container: "container mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 mt-10",
+  title: "text-3xl tracking-tight leading-9 font-extrabold text-gray-900 sm:text-4xl sm:leading-10 text-center",
   listItem: "transition-colors duration-200 ease-in-out hover:bg-gray-100 p-4 rounded-md",
   timelineLine: "absolute top-4 left-4 -ml-px h-full w-0.5 bg-royal-blue",
   flexContainer: "relative flex space-x-3",

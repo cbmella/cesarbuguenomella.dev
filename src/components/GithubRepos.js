@@ -3,7 +3,7 @@ import { useStaticQuery, graphql } from 'gatsby';
 import RepoItem from './RepoItem';
 
 const classes = {
-  container: "container mx-auto max-w-7xl px-4 sm:px-6 mt-6",
+  container: "container mx-auto max-w-7xl px-4 sm:px-6 mt-6 py-10",
   centeredText: "text-center",
   title: "text-3xl tracking-tight leading-9 font-extrabold text-gray-900 sm:text-4xl sm:leading-10",
 };

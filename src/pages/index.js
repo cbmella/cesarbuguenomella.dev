@@ -16,7 +16,7 @@ const IndexPage = () => (
     <Experience />
     <Skills />
     <GithubRepos />
-    <MediumPosts />
+{/*     <MediumPosts /> */}
     <Footer />
   </main>
 );

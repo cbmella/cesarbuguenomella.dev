@@ -29,7 +29,7 @@ const Bio = () => {
     handleResize();
 
     return () => window.removeEventListener("resize", handleResize);
-  }, []);
+  }, [desktopImage, mobileImage]);
 
   const handleCopy = (type) => {
     setCopied({ ...copied, [type]: true });
